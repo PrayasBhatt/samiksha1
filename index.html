@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Samiksha.info</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+ 
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      overflow-x: hidden;
+      font-family: "poppins", sans-serif;
+    }
+
+    .heading {
+      color: #f4d03f;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 3rem;
+      box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .title {
+      box-shadow: 10px 5px 10px rgba(255, 255, 255, 0.5);
+      padding: 1rem 0rem 1rem 0.7rem;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      color: #fff;
+      font-size: 1.3rem;
+      background-color: #de3163;
+    }
+
+    .year {
+      background-color: #fff;
+      padding: 0.2rem 0.8rem;
+      border-radius: 10px;
+      color: #2c3e50;
+      font-size: 0.9rem;
+      margin: 0 0.5rem;
+    }
+
+    #timeline p {
+      padding: 1rem 0 1rem 1rem;
+      color: #000;
+    }
+
+    #timeline button {
+      margin: 0.5rem 0rem 1rem 1rem;
+      outline: none;
+      border: 1px solid #ddd;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      background: transparent;
+      transition: all 0.3s ease-in;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    #timeline button:hover {
+      background-color: #17202a;
+      color: #fff;
+    }
+
+    #timeline ul {
+      padding: 50px 0;
+    }
+
+    /* create a line */
+    #timeline ul li {
+      list-style: none;
+      position: relative;
+      width: 7px;
+      margin: 0 auto;
+      padding-top: 50px;
+      background-color: #58d68e;
+    }
+
+    #timeline ul li .box {
+      position: relative;
+      bottom: 0;
+      width: 450px;
+      background-color: #fff;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+      border-radius: 5px;
+      transform: translateX(400%);
+      transition: all 0.5s ease-in-out;
+    }
+
+    /* right side */
+    #timeline ul li:nth-child(odd) .box {
+      left: 50px;
+    }
+
+    /* left side */
+    #timeline ul li:nth-child(even) .box {
+      left: -500px;
+      transform: translateX(-400%);
+    }
+
+    #timeline ul li .box.show {
+      transform: translateX(0%);
+      transition: all 0.5s ease-in-out;
+    }
+
+    #timeline ul li i {
+      position: absolute;
+      left: 50%;
+      top: 20;
+      width: 45px;
+      height: 45px;
+      background: #2c3e50;
+      transform: translateX(-50%);
+      border-radius: 50%;
+    }
+
+    #timeline .fa-brands,
+    #timeline .fa-solid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      color: #f4d03f;
+    }
+
+    /* arrow */
+    #timeline .box:before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      width: 0;
+      right: 0;
+      border-style: solid;
+    }
+
+    #timeline ul li:nth-child(odd) .box:before {
+      left: -15px;
+      border-width: 8px 16px 8px 0;
+      border-color: transparent #de3163;
+    }
+
+    #timeline ul li:nth-child(even) .box:before {
+      right: -15px;
+      border-width: 8px 0px 8px 16px;
+      border-color: transparent #de3163;
+    }
+
+    @media (max-width: 900px) {
+      #timeline ul li .box {
+        width: 350px;
+      }
+
+      #timeline ul li:nth-child(even) .box:beofre {
+        left: -15px;
+        border-width: 8px 16px 8px 0px;
+        border-color: transparent #de3163;
+      }
+
+      /* right side */
+      #timeline ul li:nth-child(odd) .box {
+        left: 40px;
+      }
+
+      /* left side */
+      #timeline ul li:nth-child(even) .box {
+        left: -390px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #timeline ul li {
+        margin-left: 30px;
+      }
+
+      #timeline ul li .box {
+        width: calc(100vw -90px);
+      }
+
+      /* left side conte */
+      #timeline ul li:nth-child(even) .box {
+        left: 40px;
+      }
+
+      #timeline ul li:nth-child(even) .box:before {
+        left: -15px;
+        border-width: 8px 16px 8px 0px;
+        border-color: transparent #de3163;
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center" style="background-color: #000;">
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Portfolio</span></a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100" style="border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 500px;
+    height: 200px;">
+      <h1 style="align-items: center;">Samiksha Shrestha</h1>
+      <p style="align-items: center;">I'm   <span class="typed" data-typed-items=" Prayas Dai ko baini ,Height sano bhako fucheee,Nibbi No1" style=""></span>
+      </p>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- About Start -->
+    <div class="container-fluid" style="color: rgb(255, 255, 255);">
+      <h2 class="heading">About</h2>
+      <div id="about" class="row about-section">
+        <div class="col-lg-4 about-card">
+
+          <h3 class="font-weight-light">Who am I ?</h3>
+          <span class="line mb-5"></span>
+          <h5 class="mb-3">Fuchee No 1</h5>
+          <p class="mt-20">With a small height and sano soch i agree that mero height dherai sano xa ra prayas dai le bhaneko sabbai kura maanxu</p>
+        </div>
+        <div class="col-lg-4 about-card">
+          <h3 class="font-weight-light">Personal Info</h3>
+          <span class="line mb-5"></span>
+          <ul class="mt40 info list-unstyled">
+            <li><span>Email</span> : samikshastha22@gmail.com
+            </li>
+            <li><span>Title</span> : Fucheee No.1</li>
+            <li><span>Address</span> : Nepal</li>
+          </ul>
+        </div>
+        <div class="col-lg-4 about-card">
+          <h3 class="font-weight-light">My Expertise</h3>
+          <span class="line mb-5"></span>
+          <div class="row">
+            <div class="col-1 text-danger pt-1"><i class="ti-widget icon-lg"></i></div>
+            <div class="col-10 ml-auto mr-3">
+              <h6>Fuchee no 1</h6>
+              <p class="subtitle">+15 years </p>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1 text-danger pt-1"><i class="ti-paint-bucket icon-lg"></i></div>
+            <div class="col-10 ml-auto mr-3">
+              <h6>Prayas Ko Baini</h6>
+              <p class="subtitle">+1 years </p>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1 text-danger pt-1"><i class="ti-stats-up icon-lg"></i></div>
+            <div class="col-10 ml-auto mr-3">
+              <h6>Nibbi</h6>
+              <p class="subtitle">+15 years</p>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+
+
+    <!-- portfolio Start -->
+    <div id="portfolio">
+      <h2 class="heading">Portfolio</h2>
+      <div class="container mx-auto mt-4">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img src="/flex.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Me when i want to flex but got nothing</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img src="/cute.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Me when i think i am cute</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img src="/filter.jpeg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Me when i use filter</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img src="/sry.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Sry for this one hai lol</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img src="/sry2.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Sry for this one also</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card" style="width: 18rem;">
+              <img src="/cutest.png" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">When i am actually cute</h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                <p class="card-text"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Portfolio End -->
+
+
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script>"use strict";
+
+      const boxes = document.querySelectorAll(".box");
+
+      window.addEventListener("scroll", DisplayContent);
+      DisplayContent();
+
+      function DisplayContent() {
+        const TriggerBottom = (window.innerHeight / 5) * 4;
+
+        boxes.forEach((box) => {
+          const topBox = box.getBoundingClientRect().top;
+
+          if (topBox < TriggerBottom) {
+            box.classList.add("show");
+          } else {
+            box.classList.remove("show");
+          }
+        });
+      }</script>
+
+
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
